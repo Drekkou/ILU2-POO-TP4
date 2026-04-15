@@ -6,14 +6,14 @@ public class Sanglier extends Produit {
 	private Gaulois gaulois;
 	private int poids;
 
-	public Sanglier(Gaulois gaulois, int poids) {
+	public Sanglier(int poids, Gaulois gaulois) {
 		super("sanglier", produit.unite.KG);
 		this.gaulois = gaulois;
 		this.poids = poids;
 	}
 
 	@Override
-	public void decrireProduit() {
+	public String decrireProduit() {
 		StringBuilder string = new StringBuilder();
 		string.append(this.getNom());
 		string.append(" de ");
@@ -23,6 +23,11 @@ public class Sanglier extends Produit {
 		string.append(" chassé par ");
 		string.append(gaulois.getNom());
 		string.append(".");
-		System.out.println(string.toString());
+		return string.toString();
+	}
+
+	@Override
+	public int calculerPrix(int prix) {
+		return this.poids * prix;
 	}
 }

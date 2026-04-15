@@ -2,10 +2,13 @@ package produit;
 
 public interface IProduit {
 
-	void decrireProduit();
+	String decrireProduit();
 
 	String getNom();
 
 	unite getUnite();
+
+	int calculerPrix(int prix);
+
 
 }
