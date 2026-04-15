@@ -12,7 +12,7 @@ enum unite {
 	}
 
 	public String getNom() {
-		return nom.toString();
+		return nom;
 	}
 
 	public int getIndex() {
@@ -25,18 +25,18 @@ public abstract class Produit implements IProduit {
 	private String nom;
 	private unite unite;
 
-	public Produit(String nom, produit.unite unite) {
+	protected Produit(String nom, produit.unite unite) {
 		super();
 		this.nom = nom;
 		this.unite = unite;
 	}
 
-	public abstract void decrireProduit();
-
+	@Override
 	public String getNom() {
-		return nom.toString();
+		return nom;
 	}
 
+	@Override
 	public unite getUnite() {
 		return this.unite;
 	}
