@@ -7,7 +7,7 @@ public class Sanglier extends Produit {
 	private int poids;
 
 	public Sanglier(int poids, Gaulois gaulois) {
-		super("sanglier", produit.unite.KG);
+		super("sanglier", Unite.KG);
 		this.gaulois = gaulois;
 		this.poids = poids;
 	}
@@ -28,6 +28,6 @@ public class Sanglier extends Produit {
 
 	@Override
 	public int calculerPrix(int prix) {
-		return this.poids * prix / 1000;
+		return super.calculerPrix(prix) * poids / 1000;
 	}
 }

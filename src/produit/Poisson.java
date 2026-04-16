@@ -4,7 +4,7 @@ public class Poisson extends Produit {
 	private String date;
 
 	public Poisson(String date) {
-		super("poisson", produit.unite.PIECE);
+		super("poisson", Unite.PIECE);
 		this.date = date;
 	}
 
@@ -15,11 +15,6 @@ public class Poisson extends Produit {
 		string.append(" pêché ");
 		string.append(this.date);
 		return string.toString();
-	}
-
-	@Override
-	public int calculerPrix(int prix) {
-		return prix;
 	}
 
 }

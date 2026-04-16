@@ -6,9 +6,10 @@ public interface IProduit {
 
 	String getNom();
 
-	unite getUnite();
+	Unite getUnite();
 
-	int calculerPrix(int prix);
-
+	public default int calculerPrix(int prix) {
+		return prix;
+	}
 
 }

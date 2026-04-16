@@ -7,16 +7,8 @@ public class Etal<P extends IProduit> implements IEtal {
 	private Gaulois vendeur;
 	private P[] produits;
 	private int nbProduit;
-	private int quantiteDebutMarche;
-	private int quantite;
 	private boolean etalOccupe = false;
 	private int prix;
-
-	
-
-	public Etal() {
-		super();
-	}
 
 	public boolean isEtalOccupe() {
 		return etalOccupe;
@@ -26,22 +18,18 @@ public class Etal<P extends IProduit> implements IEtal {
 		return vendeur;
 	}
 
-	public int getQuantite() {
-		return quantite;
-	}
-
 	public void installerVendeur(Gaulois vendeur, P[] produit, int prix) {
 		this.vendeur = vendeur;
 		this.produits = produit;
 		this.nbProduit = produit.length;
-		this.quantiteDebutMarche = produit.length;
 		this.prix = prix;
 	}
 
 	@Override
 	public int contientProduit(String produit, int quantiteSouhaitee) {
 		int quantiteAVendre = 0;
-		if (nbProduit != 0 && this.produits[0].getNom().equals(produit)) {
+		String nomProduit = this.produits[0].getNom();
+		if (nbProduit != 0 && nomProduit != null && nomProduit.equals(produit)) {
 			if (nbProduit >= quantiteSouhaitee) {
 				quantiteAVendre = quantiteSouhaitee;
 			} else {
@@ -81,6 +69,5 @@ public class Etal<P extends IProduit> implements IEtal {
 		chaine.append("\n");
 		return chaine.toString();
 	}
-
 
 }
