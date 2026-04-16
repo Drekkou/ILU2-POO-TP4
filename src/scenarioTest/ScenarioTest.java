@@ -54,7 +54,7 @@ public class ScenarioTest {
 		marche[0] = etal1;
 		marche[1] = etal2;
 		marche[2] = etal3;
-		
+
 		etal1.installerVendeur(obelix, sangliersObelix, 8);
 		etal2.installerVendeur(asterix, sangliersAsterix, 10);
 		etal3.installerVendeur(ordralfabetix, poissons, 7);
@@ -72,4 +72,3 @@ public class ScenarioTest {
 	}
 
 }
-
